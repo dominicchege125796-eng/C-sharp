@@ -1,25 +1,62 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36811.4 d17.14
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "methods", "methods\methods.csproj", "{3F64DA9A-6E79-405A-822E-93767648A389}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3F64DA9A-6E79-405A-822E-93767648A389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3F64DA9A-6E79-405A-822E-93767648A389}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3F64DA9A-6E79-405A-822E-93767648A389}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3F64DA9A-6E79-405A-822E-93767648A389}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {073EAA4E-48FC-4418-98D7-387CBD75BB97}
-	EndGlobalSection
-EndGlobal
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace methods
+{
+    internal class Program
+    {
+        double pi = 3.142;
+        void Area_circle()
+        {
+            Console.WriteLine("Area of the circle");
+            Console.WriteLine("................... \n");
+            Console.WriteLine("Enter the Radius of the circle");
+            int radius = Convert.ToInt32(Console.ReadLine());
+            double area = pi * radius * radius;
+            Console.WriteLine("The Area of the circle is : " + area);
+
+        }
+        void Area_rec()
+        {
+            Console.WriteLine("Area of the rectangle ");
+            Console.WriteLine("................... \n");
+            Console.WriteLine("Enter the Length ");
+            int length = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the Width ");
+            int width = Convert.ToInt32(Console.ReadLine());
+            int area = length * width;
+            Console.WriteLine("The Area of the Rectangle : " + area);
+        }
+        static void Main(string[] args)
+        {
+            Program tree = new Program();
+            Console.WriteLine(".......Welcome.......");
+                Console.WriteLine("1. Area of a Circle");
+                Console.WriteLine("2. Area of a Rectangle");
+                Console.WriteLine("Enter your choice");
+                int choice = Convert.ToInt32(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1:
+                        tree.Area_circle();
+                        break;
+                    case 2:
+                        tree.Area_rec();
+                        break;
+                    case 3:
+                        Console.WriteLine("Thank you!");
+                        break;
+                    default:
+                        Console.WriteLine("Invalid");
+                        break;
+
+                }
+            
+            Console.ReadKey();
+        }
+        
+    }
+}
